@@ -21,7 +21,7 @@ const Services: React.FC = () => {
             const Icon = (LucideIcons as any)[service.icon] || LucideIcons.Shield;
 
             return (
-              <div key={service.id} className="bg-cyber-900 rounded-xl p-8 border border-cyber-700 flex flex-col md:flex-row gap-8 items-start hover:border-cyber-accent/50 transition-colors">
+              <div key={service.id} className="bg-cyber-900 rounded-xl p-8 border border-cyber-700 flex flex-col md:flex-row gap-8 items-start hover:border-cyber-accent/50 transition-colors group relative">
                 <div className="bg-cyber-800 p-4 rounded-lg border border-cyber-700 shrink-0">
                   <Icon className="h-10 w-10 text-cyber-accent" />
                 </div>
@@ -49,6 +49,9 @@ const Services: React.FC = () => {
                    >
                      Request Proposal
                    </a>
+                </div>
+                <div className="absolute left-8 top-8 hidden group-hover:block bg-cyber-800 text-white text-sm p-4 rounded shadow-lg z-10 max-w-md">
+                  {service.details}
                 </div>
               </div>
             );

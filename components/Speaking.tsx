@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mic, Video, Users } from 'lucide-react';
+import { SPEAKING_ITEMS } from '../constants';
 
 const Speaking: React.FC = () => {
   return (
@@ -15,21 +16,25 @@ const Speaking: React.FC = () => {
         </p>
         
         <div className="grid md:grid-cols-3 gap-8 mb-12">
-           <div className="bg-cyber-900/50 p-6 rounded-xl border border-cyber-700">
-              <Users className="h-8 w-8 text-blue-500 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-white mb-2">Workshops</h3>
-              <p className="text-gray-400">Hands-on technical training for teams and students.</p>
-           </div>
-           <div className="bg-cyber-900/50 p-6 rounded-xl border border-cyber-700">
-              <Video className="h-8 w-8 text-purple-500 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-white mb-2">Webinars</h3>
-              <p className="text-gray-400">Remote sessions covering current threat landscapes.</p>
-           </div>
-           <div className="bg-cyber-900/50 p-6 rounded-xl border border-cyber-700">
-              <Mic className="h-8 w-8 text-cyber-accent mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-white mb-2">Keynotes</h3>
-              <p className="text-gray-400">Inspiring talks on security leadership and innovation.</p>
-           </div>
+           {SPEAKING_ITEMS.map((item, idx) => {
+             let Icon;
+             switch (item.icon) {
+               case 'Users': Icon = Users; break;
+               case 'Video': Icon = Video; break;
+               case 'Mic': Icon = Mic; break;
+               default: Icon = Users;
+             }
+             return (
+               <div key={idx} className="bg-cyber-900/50 p-6 rounded-xl border border-cyber-700 group relative">
+                 <Icon className="h-8 w-8 text-blue-500 mx-auto mb-4" />
+                 <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                 <p className="text-gray-400">{item.description}</p>
+                 <div className="absolute left-0 top-0 hidden group-hover:block bg-cyber-800 text-white text-sm p-4 rounded shadow-lg z-10 max-w-xs mt-16">
+                   {item.details}
+                 </div>
+               </div>
+             );
+           })}
         </div>
 
         <div className="p-8 bg-cyber-900 rounded-xl border border-dashed border-gray-600">

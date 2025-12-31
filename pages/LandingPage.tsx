@@ -7,6 +7,7 @@ import Contact from './Contact';
 import Speaking from '../components/Speaking';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import ReadingProgressBar from '../components/ReadingProgressBar';
 
 const LandingPage: React.FC = () => {
     return (

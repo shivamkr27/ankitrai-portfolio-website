@@ -3,8 +3,21 @@ export interface Service {
   title: string;
   icon: string;
   description: string;
+  details: string;
   targetAudience: string;
   outcome: string;
+}
+
+export interface Skill {
+  title: string;
+  details: string;
+}
+
+export interface SpeakingItem {
+  icon: string;
+  title: string;
+  description: string;
+  details: string;
 }
 
 export interface Project {

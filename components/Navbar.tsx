@@ -13,47 +13,18 @@ const Navbar: React.FC = () => {
   const isHomePage = location.pathname === '/';
 
   const navLinks = [
-    { name: 'Home', href: '#home', isScroll: true },
-    { name: 'About', href: '#about', isScroll: true },
-    { name: 'Services', href: '#services', isScroll: true },
-    { name: 'Projects', href: '#projects', isScroll: true },
-    { name: 'Start Learning', href: '#speaking', isScroll: true },
+    { name: 'Home', href: '/', isScroll: false },
+    { name: 'About', href: '/about', isScroll: false },
+    { name: 'Services', href: '/services', isScroll: false },
+    { name: 'Projects', href: '/projects', isScroll: false },
+    { name: 'Start Learning', href: '/start-learning', isScroll: false },
     { name: 'Blog', href: '/blog', isScroll: false },
-    { name: 'Contact', href: '#contact', isScroll: true },
+    { name: 'Contact', href: '/contact', isScroll: false },
   ];
 
-  const handleNavigation = async (e: React.MouseEvent<HTMLElement>, link: { href: string; isScroll: boolean }) => {
-    // If it's a scroll link
-    if (link.isScroll) {
-      e.preventDefault();
-
-      if (!isHomePage) {
-        // If not on home page, navigate to home first
-        await navigate('/');
-        // Wait a bit for navigation and render
-        setTimeout(() => {
-          const element = document.querySelector(link.href);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-          }
-        }, 100);
-      } else {
-        // Already on home page, just scroll
-        const element = document.querySelector(link.href);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-      setIsOpen(false);
-    } else {
-      // If it's a route link (like /blog), let standard behavior happen or navigate
-      // but we need to close mobile menu
-      setIsOpen(false);
-      // If using Link component simpler, but for unified handler:
-      if (link.href.startsWith('/')) {
-        navigate(link.href);
-      }
-    }
+  const handleNavigation = (e: React.MouseEvent<HTMLElement>, link: { href: string; isScroll: boolean }) => {
+    // All links are now routes, just close mobile menu
+    setIsOpen(false);
   };
 
   const openContactModal = (e: React.MouseEvent) => {
@@ -76,14 +47,14 @@ const Navbar: React.FC = () => {
             <div className="hidden md:block">
               <div className="ml-10 flex items-center space-x-8">
                 {navLinks.map((link) => (
-                  <button
+                  <Link
                     key={link.name}
-                    onClick={(e) => handleNavigation(e, link)}
-                    className="text-sm font-medium text-gray-400 hover:text-white transition-colors duration-200 relative group cursor-pointer bg-transparent border-none"
+                    to={link.href}
+                    className="text-sm font-medium text-gray-400 hover:text-white transition-colors duration-200 relative group"
                   >
                     {link.name}
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyber-accent transition-all duration-300 group-hover:w-full"></span>
-                  </button>
+                  </Link>
                 ))}
 
                 {/* Secret Admin Link */}
@@ -113,13 +84,14 @@ const Navbar: React.FC = () => {
           <div className="md:hidden bg-cyber-900 border-b border-cyber-700 shadow-2xl">
             <div className="px-4 pt-4 pb-6 space-y-2">
               {navLinks.map((link) => (
-                <button
+                <Link
                   key={link.name}
-                  onClick={(e) => handleNavigation(e, link)}
-                  className="block w-full text-left px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-cyber-800 bg-transparent border-none"
+                  to={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-cyber-800"
                 >
                   {link.name}
-                </button>
+                </Link>
               ))}
               <button
                 onClick={openContactModal}

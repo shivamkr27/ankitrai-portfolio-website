@@ -29,9 +29,12 @@ const About: React.FC = () => {
              </div>
              <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
                {SKILLS.map((skill, idx) => (
-                 <div key={idx} className="flex items-center gap-2 p-3 bg-cyber-800/50 rounded border border-cyber-700/50 hover:border-cyber-accent/30 transition-colors">
+                 <div key={idx} className="relative flex items-center gap-2 p-3 bg-cyber-800/50 rounded border border-cyber-700/50 hover:border-cyber-accent/30 transition-colors group">
                    <div className="w-1.5 h-1.5 rounded-full bg-cyber-accent"></div>
-                   <span className="text-gray-300 text-sm font-medium">{skill}</span>
+                   <span className="text-gray-300 text-sm font-medium">{skill.title}</span>
+                   <div className="absolute left-0 top-full mt-2 hidden group-hover:block bg-cyber-800 text-white text-xs p-2 rounded shadow-lg z-10 max-w-xs">
+                     {skill.details}
+                   </div>
                  </div>
                ))}
              </div>

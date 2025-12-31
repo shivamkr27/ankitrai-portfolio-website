@@ -49,8 +49,8 @@ const ContactForm: React.FC = () => {
                     required
                     value={formState.name}
                     onChange={handleChange}
-                    className="w-full bg-cyber-800 border border-cyber-600 rounded px-4 py-3 text-white focus:outline-none focus:border-cyber-accent transition-colors"
-                    placeholder="John Doe"
+                    className="w-full bg-cyber-800 border border-cyber-600 rounded px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyber-accent focus:border-cyber-accent transition-colors"
+                    placeholder="Your Name"
                 />
             </div>
             <div>
@@ -62,8 +62,8 @@ const ContactForm: React.FC = () => {
                     required
                     value={formState.email}
                     onChange={handleChange}
-                    className="w-full bg-cyber-800 border border-cyber-600 rounded px-4 py-3 text-white focus:outline-none focus:border-cyber-accent transition-colors"
-                    placeholder="john@company.com"
+                    className="w-full bg-cyber-800 border border-cyber-600 rounded px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyber-accent focus:border-cyber-accent transition-colors"
+                    placeholder="your.email@example.com"
                 />
             </div>
             <div>
@@ -73,7 +73,7 @@ const ContactForm: React.FC = () => {
                     id="subject"
                     value={formState.subject}
                     onChange={handleChange}
-                    className="w-full bg-cyber-800 border border-cyber-600 rounded px-4 py-3 text-white focus:outline-none focus:border-cyber-accent transition-colors"
+                    className="w-full bg-cyber-800 border border-cyber-600 rounded px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyber-accent focus:border-cyber-accent transition-colors"
                 >
                     <option value="">Select a Topic</option>
                     <option value="Consulting">Cyber Security Consulting</option>
@@ -92,8 +92,8 @@ const ContactForm: React.FC = () => {
                     required
                     value={formState.message}
                     onChange={handleChange}
-                    className="w-full bg-cyber-800 border border-cyber-600 rounded px-4 py-3 text-white focus:outline-none focus:border-cyber-accent transition-colors"
-                    placeholder="How can I help you?"
+                    className="w-full bg-cyber-800 border border-cyber-600 rounded px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyber-accent focus:border-cyber-accent transition-colors"
+                    placeholder="Your message here..."
                 ></textarea>
             </div>
             <button

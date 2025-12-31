@@ -1,4 +1,4 @@
-import { Service, Project, Experience, MediaFeature } from './types';
+import { Service, Project, Experience, MediaFeature, Skill, SpeakingItem } from './types';
 
 export const HERO_CONTENT = {
   name: "Ankit Rai",
@@ -16,15 +16,39 @@ export const TRUST_BADGES = [
   "Featured: India News"
 ];
 
-export const SKILLS = [
-  "Penetration Testing (VAPT)",
-  "Network Security Architecture",
-  "Digital Forensics",
-  "Incident Response",
-  "Dark Web Intelligence",
-  "Cloud Security (AWS/Azure)",
-  "Security Compliance (ISO 27001)",
-  "Ethical Hacking Training"
+export const SKILLS: Skill[] = [
+  {
+    title: "Penetration Testing (VAPT)",
+    details: "Comprehensive vulnerability assessment and penetration testing to identify and exploit security weaknesses before malicious actors can."
+  },
+  {
+    title: "Network Security Architecture",
+    details: "Design and implementation of secure network infrastructures with advanced threat detection and prevention mechanisms."
+  },
+  {
+    title: "Digital Forensics",
+    details: "Expert analysis of digital evidence, incident investigation, and chain-of-custody procedures for legal and compliance purposes."
+  },
+  {
+    title: "Incident Response",
+    details: "Rapid containment and analysis of security incidents to minimize impact and prevent future occurrences."
+  },
+  {
+    title: "Dark Web Intelligence",
+    details: "Monitoring underground forums and marketplaces for threat intelligence and proactive risk mitigation."
+  },
+  {
+    title: "Cloud Security (AWS/Azure)",
+    details: "Securing cloud environments with identity management, encryption, and compliance frameworks for major cloud platforms."
+  },
+  {
+    title: "Security Compliance (ISO 27001)",
+    details: "Ensuring organizational adherence to international security standards and regulatory requirements."
+  },
+  {
+    title: "Ethical Hacking Training",
+    details: "Comprehensive training programs for security professionals and organizations on ethical hacking methodologies."
+  }
 ];
 
 export const SERVICES: Service[] = [
@@ -33,6 +57,7 @@ export const SERVICES: Service[] = [
     title: "Cyber Security Consulting",
     icon: "ShieldAlert",
     description: "End-to-end security strategy for organizations.",
+    details: "Comprehensive security consulting including risk assessment, policy development, and strategic planning to build robust defense systems.",
     targetAudience: "Startups, SMEs, Enterprises",
     outcome: "Robust security posture and compliance alignment."
   },
@@ -41,6 +66,7 @@ export const SERVICES: Service[] = [
     title: "VAPT (Vulnerability Assessment)",
     icon: "ScanEye",
     description: "Deep-dive penetration testing to find weak spots before hackers do.",
+    details: "Thorough vulnerability scanning, exploitation testing, and detailed reporting with remediation recommendations.",
     targetAudience: "Banks, Fintech, SaaS Platforms",
     outcome: "Identified and patched critical vulnerabilities."
   },
@@ -49,6 +75,7 @@ export const SERVICES: Service[] = [
     title: "Corporate & Govt Training",
     icon: "Presentation",
     description: "Hands-on workshops for teams on latest threats.",
+    details: "Customized training programs covering phishing awareness, secure coding practices, and incident response procedures.",
     targetAudience: "Government Bodies (ITBP, Police), Banks (Union Bank)",
     outcome: "Workforce aware of phishing, social engineering, and secure coding."
   },
@@ -57,6 +84,7 @@ export const SERVICES: Service[] = [
     title: "Dark Web & Threat Intelligence",
     icon: "Ghost",
     description: "Monitoring the dark web for leaked credentials and brand threats.",
+    details: "Continuous monitoring of underground sources for data breaches, credential leaks, and emerging threats to your organization.",
     targetAudience: "High-profile Individuals, Enterprises",
     outcome: "Proactive leak detection and risk mitigation."
   },
@@ -65,6 +93,7 @@ export const SERVICES: Service[] = [
     title: "Web & Digital Security Advisory",
     icon: "GlobeLock",
     description: "Security-first architecture for web applications.",
+    details: "Security-by-design approach for web applications including secure coding reviews and architecture recommendations.",
     targetAudience: "Developers, CTOs",
     outcome: "Secure-by-design applications."
   }
@@ -122,6 +151,27 @@ export const MEDIA: MediaFeature[] = [
   { outlet: "Veer Savarkar National Award", type: "Award", description: "Honored for contributions to national security awareness." },
   { outlet: "Radio Mirchi", type: "Radio", description: "Expert commentary on cyber safety for the general public." },
   { outlet: "India News / Bharat Samachar", type: "TV", description: "Panel expert discussing major cyber attacks and data breaches." }
+];
+
+export const SPEAKING_ITEMS: SpeakingItem[] = [
+  {
+    icon: "Users",
+    title: "Workshops",
+    description: "Hands-on technical training for teams and students.",
+    details: "Interactive sessions covering practical cybersecurity techniques, tools, and real-world scenarios for skill development."
+  },
+  {
+    icon: "Video",
+    title: "Webinars",
+    description: "Remote sessions covering current threat landscapes.",
+    details: "Live online presentations discussing emerging threats, security trends, and best practices for remote audiences."
+  },
+  {
+    icon: "Mic",
+    title: "Keynotes",
+    description: "Inspiring talks on security leadership and innovation.",
+    details: "Motivational presentations on cybersecurity leadership, innovation in security, and future trends in digital defense."
+  }
 ];
 
 export const SOCIAL_LINKS = {

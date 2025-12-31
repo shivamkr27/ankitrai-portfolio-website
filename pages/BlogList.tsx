@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import ReadingProgressBar from '../components/ReadingProgressBar';
 
 const BlogList: React.FC = () => {
     const { posts } = useBlog();
